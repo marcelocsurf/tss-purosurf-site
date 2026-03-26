@@ -343,11 +343,19 @@ p { font-size: 16px; line-height: 1.7; color: var(--ghost); }
 @media (max-width: 1024px) {
   section { padding: 80px 40px; }
   .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
-  .nav { padding: 12px 20px; }
-  .nav-center { position: static; transform: none; flex-wrap: wrap; justify-content: center; }
-  .nav-link { font-size: 9px; padding: 6px 6px; }
+  .nav { padding: 10px 16px; flex-wrap: wrap; gap: 4px; }
+  .nav-brand img { height: 22px; }
+  .nav-center { position: static; transform: none; max-width: 100%; overflow-x: auto; justify-content: flex-start; order: 3; width: 100%; }
+  .nav-link { font-size: 8px; padding: 4px 5px; letter-spacing: 0.5px; }
   .nav-sep { display: none; }
+  .nav-right { font-size: 8px; letter-spacing: 1px; }
   .section-footer { left: 40px; right: 40px; }
+}
+@media (max-width: 768px) {
+  section { padding: 60px 24px; }
+  .nav-right { display: none; }
+  .nav-center { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .nav-link { font-size: 8px; padding: 4px 4px; }
 }
 
 /* SCROLLBAR */
@@ -541,18 +549,25 @@ p { font-size: 16px; line-height: 1.7; color: var(--ghost); }
     </div>
 
     <div style="margin-top:32px;" class="fade-in fade-in-delay-3">
-      <div class="card" style="border:1px solid rgba(6,214,160,0.2);background:rgba(6,214,160,0.04);text-align:center;padding:36px 48px;">
-        <p style="font-size:15px;color:var(--muted);margin-bottom:8px;">El resultado más visible de esta metodología:</p>
-        <h3 style="font-size:28px;color:var(--white);font-family:'Playfair Display',serif;font-weight:800;margin-bottom:4px;">Bryan Pérez — Primer surfista olímpico de El Salvador</h3>
-        <p style="font-size:16px;color:var(--foam);font-weight:600;">París 2024</p>
-        <p style="font-size:14px;color:var(--muted);margin-top:12px;">Ese resultado no vino solo de la técnica. Vino del framework mental, del entrenamiento estructurado,<br>de la capacidad de mantenerse presente y enfocado bajo la presión más alta del deporte.</p>
-        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(90,195,231,0.1);">
-          <a href="ONE_WAVE_v5_Clean_Editorial.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:10px 24px;background:rgba(90,195,231,0.08);border:1px solid rgba(90,195,231,0.2);border-radius:8px;color:var(--cyan);text-decoration:none;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;transition:all 0.3s ease;">
-            <span style="font-size:18px;">📖</span>
-            <span>LEER EL LIBRO: ONE WAVE</span>
-            <span style="font-size:14px;">→</span>
+      <div class="card" style="border:1px solid rgba(90,195,231,0.2);background:linear-gradient(135deg, rgba(90,195,231,0.06) 0%, rgba(6,214,160,0.04) 100%);text-align:center;padding:40px 48px;">
+        <p style="font-size:12px;color:var(--cyan);font-family:'DM Mono',monospace;letter-spacing:2px;margin-bottom:12px;">📖 EL LIBRO</p>
+        <h3 style="font-size:32px;color:var(--white);font-family:'Playfair Display',serif;font-weight:800;margin-bottom:8px;"><em>One Wave</em></h3>
+        <p style="font-size:17px;color:var(--foam);font-weight:600;margin-bottom:16px;">El framework mental completo detrás de The Surf Sequence®</p>
+        <div style="width:60px;height:3px;background:var(--cyan);margin:0 auto 16px;border-radius:2px;"></div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 8px;">El libro que documenta 15+ años de desarrollo metodológico — desde la filosofía de una ola a la vez, hasta el sistema completo de cinturones, certificación y entrenamiento que hoy define TSS.</p>
+        <p style="font-size:14px;color:var(--ghost);line-height:1.7;max-width:600px;margin:0 auto 20px;">No es solo un libro de surf. Es el manual operativo de una metodología que conecta rendimiento, mentalidad y propósito.</p>
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px;">
+          <div style="padding:8px 16px;background:rgba(90,195,231,0.08);border-radius:6px;"><span style="font-size:12px;color:var(--cyan);font-family:'DM Mono',monospace;">Framework Mental</span></div>
+          <div style="padding:8px 16px;background:rgba(6,214,160,0.08);border-radius:6px;"><span style="font-size:12px;color:var(--foam);font-family:'DM Mono',monospace;">Filosofía TSS</span></div>
+          <div style="padding:8px 16px;background:rgba(255,209,102,0.08);border-radius:6px;"><span style="font-size:12px;color:var(--golden);font-family:'DM Mono',monospace;">Validación Olímpica</span></div>
+        </div>
+        <div style="padding-top:16px;border-top:1px solid rgba(90,195,231,0.1);">
+          <a href="https://marcelocsurf.github.io/tss-purosurf-site/ONE_WAVE_v5_Clean_Editorial.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:12px 28px;background:rgba(90,195,231,0.12);border:1px solid rgba(90,195,231,0.3);border-radius:8px;color:var(--cyan);text-decoration:none;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:1px;transition:all 0.3s ease;">
+            <span style="font-size:20px;">📖</span>
+            <span>LEER ONE WAVE</span>
+            <span style="font-size:16px;">→</span>
           </a>
-          <p style="font-size:11px;color:var(--muted);margin-top:8px;opacity:0.6;">El framework mental completo detrás de The Surf Sequence®</p>
+          <p style="font-size:11px;color:var(--muted);margin-top:10px;opacity:0.6;">Por Marcelo Castellanos — 3x Campeón Nacional · Coach Olímpico ISA · Creador de TSS</p>
         </div>
       </div>
     </div>
@@ -638,7 +653,7 @@ p { font-size: 16px; line-height: 1.7; color: var(--ghost); }
         <div style="font-size:40px;flex-shrink:0;">🔐</div>
         <div>
           <p style="font-size:15px;color:var(--white);font-weight:600;margin-bottom:4px;">Propiedad intelectual 100% de Marcelo Castellanos</p>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Registrada bajo Enkrateia SA de CV. Incluye Core Canon, libro <a href="ONE_WAVE_v5_Clean_Editorial.pdf" target="_blank" style="color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(90,195,231,0.3);"><em>One Wave</em></a>, sistema de certificación, Belt Level Packs, plataforma digital y todas las herramientas derivadas. Obra de una vida entera.</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Registrada bajo Enkrateia SA de CV. Incluye Core Canon, libro <a href="https://marcelocsurf.github.io/tss-purosurf-site/ONE_WAVE_v5_Clean_Editorial.pdf" target="_blank" style="color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(90,195,231,0.3);"><em>One Wave</em></a>, sistema de certificación, Belt Level Packs, plataforma digital y todas las herramientas derivadas. Obra de una vida entera.</p>
         </div>
       </div>
     </div>
@@ -975,7 +990,7 @@ p { font-size: 16px; line-height: 1.7; color: var(--ghost); }
           </div>
           <div class="card" style="padding:16px 20px;display:flex;align-items:center;gap:10px;">
             <span class="compare-icon icon-check" style="width:22px;height:22px;">✓</span>
-            <span style="font-size:13px;"><a href="ONE_WAVE_v5_Clean_Editorial.pdf" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(90,195,231,0.3);">One Wave</a> — libro & marco mental olímpico</span>
+            <span style="font-size:13px;"><a href="https://marcelocsurf.github.io/tss-purosurf-site/ONE_WAVE_v5_Clean_Editorial.pdf" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(90,195,231,0.3);">One Wave</a> — libro & marco mental olímpico</span>
           </div>
           <div class="card" style="padding:16px 20px;display:flex;align-items:center;gap:10px;">
             <span class="compare-icon icon-check" style="width:22px;height:22px;">✓</span>
